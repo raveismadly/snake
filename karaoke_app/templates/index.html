@@ -1,0 +1,46 @@
+
+
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Karaoke Creator</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+      body {
+        padding: 20px;
+      }
+      .container {
+        max-width: 600px;
+        margin-top: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="mb-4">Karaoke Creator</h1>
+      <form action="/upload" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+          <label for="audio_file">Select an audio file (MP3 or WAV):</label>
+          <input type="file" class="form-control-file" id="audio_file" name="audio_file" accept=".mp3,.wav">
+        </div>
+        <button type="submit" class="btn btn-primary">Create Karaoke</button>
+      </form>
+
+      {% if success_message %}
+        <div class="alert alert-success mt-3">
+          {{ success_message }}
+        </div>
+      {% endif %}
+
+      {% if error_message %}
+        <div class="alert alert-danger mt-3">
+          {{ error_message }}
+        </div>
+      {% endif %}
+    </div>
+  </body>
+</html>
+
