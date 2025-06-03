@@ -15,7 +15,10 @@ setup(
         "moviepy==1.0.3",
         "whisper==1.1.10",
         "Pillow",
-        "ffmpeg-python"
+        "ffmpeg-python",
+        # Tkinter is included in standard Python installation,
+        # but we'll include it here for completeness
+        "tk"
     ],
     entry_points={
         'console_scripts': [

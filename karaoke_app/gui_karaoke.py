@@ -28,7 +28,12 @@ def run_karaoke():
         )
         messagebox.showinfo("Success", "Karaoke created successfully!")
     except subprocess.CalledProcessError as e:
-        messagebox.showerror("Error", f"Failed to create karaoke:\n{e.output}")
+        error_msg = f"Failed to create karaoke:\n{e.output}"
+        if hasattr(e, 'stderr') and e.stderr:
+            error_msg += f"\n\nError details:\n{e.stderr}"
+        messagebox.showerror("Error", error_msg)
+    except Exception as e:
+        messagebox.showerror("Error", f"An unexpected error occurred:\n{str(e)}")
 
 # Create the main window
 root = tk.Tk()

@@ -1,3 +1,4 @@
+
 # Use specific versions that are known to work together
 demucs==4.0.1
 pydub==0.25.1
@@ -5,7 +6,9 @@ moviepy==1.0.3
 whisper==1.1.10
 Pillow
 
+# For video processing
+ffmpeg-python
 
-ffmpeg-python  # For video processing
-tk  # For GUI application
-
+# For GUI application (Tkinter is included in standard Python installation,
+# but we'll include it here for completeness)
+tk

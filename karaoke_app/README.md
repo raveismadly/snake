@@ -63,8 +63,6 @@ brew install python-tk
 
 The output will be saved as `karaoke_{filename}.mp4` in the same directory.
 
-
-
 ## GUI Application
 
 The application also includes a simple graphical user interface (GUI) that can be used to create karaoke videos.
@@ -77,4 +75,3 @@ python gui_karaoke.py
 ## License
 
 This project is licensed under the MIT License.
-
