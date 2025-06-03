@@ -21,7 +21,7 @@ def run_karaoke():
     # Run the CLI karaoke application
     try:
         result = subprocess.run(
-            ["python", "cli_karaoke.py", input_file],
+            ["python3", "cli_karaoke.py", input_file],
             check=True,
             capture_output=True,
             text=True

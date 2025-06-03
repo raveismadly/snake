@@ -50,7 +50,7 @@ brew install python-tk
 
 3. Run the application using command line:
    ```bash
-   python cli_karaoke.py path/to/your/audiofile.mp3
+   python3 cli_karaoke.py path/to/your/audiofile.mp3
    ```
 
 ## Usage
@@ -58,7 +58,7 @@ brew install python-tk
 1. Prepare an audio file (MP3 or WAV).
 2. Run the command-line application with your audio file as input:
    ```bash
-   python cli_karaoke.py path/to/your/audiofile.mp3
+   python3 cli_karaoke.py path/to/your/audiofile.mp3
    ```
 
 The output will be saved as `karaoke_{filename}.mp4` in the same directory.
@@ -69,7 +69,7 @@ The application also includes a simple graphical user interface (GUI) that can b
 
 To run the GUI application (requires a graphical interface):
 ```bash
-python gui_karaoke.py
+python3 gui_karaoke.py
 ```
 
 ## License

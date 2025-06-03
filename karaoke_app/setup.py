@@ -9,6 +9,7 @@ setup(
     author="Your Name",
     packages=find_packages(),
     py_modules=['cli_karaoke', 'gui_karaoke'],
+    python_requires='>=3.6',
     install_requires=[
         "demucs==4.0.1",
         "pydub==0.25.1",

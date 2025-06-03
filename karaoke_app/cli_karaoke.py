@@ -176,3 +176,8 @@ if __name__ == "__main__":
         print(f"Error: {str(e)}")
         sys.exit(1)
 
+# Ensure the script is run with Python3
+if sys.version_info[0] < 3:
+    print("This script requires Python 3 or higher")
+    sys.exit(1)
+
