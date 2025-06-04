@@ -1,8 +1,16 @@
 
+
+
 import tkinter as tk
 from tkinter import filedialog, messagebox
 import subprocess
 import os
+import sys
+
+# Check Python version
+if sys.version_info < (3, 9):
+    print("This script requires Python 3.9 or higher")
+    sys.exit(1)
 
 def browse_file():
     file_path = filedialog.askopenfilename(
@@ -18,42 +26,37 @@ def run_karaoke():
         messagebox.showerror("Error", "Please select a valid audio file")
         return
 
-    # Run the CLI karaoke application
     try:
-        result = subprocess.run(
-            ["python3", "cli_karaoke.py", input_file],
+        subprocess.run(
+            ["python", "cli_karaoke.py", input_file],
             check=True,
             capture_output=True,
             text=True
         )
         messagebox.showinfo("Success", "Karaoke created successfully!")
     except subprocess.CalledProcessError as e:
-        error_msg = f"Failed to create karaoke:\n{e.output}"
-        if hasattr(e, 'stderr') and e.stderr:
-            error_msg += f"\n\nError details:\n{e.stderr}"
-        messagebox.showerror("Error", error_msg)
-    except Exception as e:
-        messagebox.showerror("Error", f"An unexpected error occurred:\n{str(e)}")
+        messagebox.showerror("Error", f"Failed to create karaoke:\n{e.output}")
 
 # Create the main window
 root = tk.Tk()
 root.title("Karaoke Creator")
 
 # Create and place widgets
-frame = tk.Frame(root, padx=10, pady=10)
+frame = tk.Frame(root)
 frame.pack(padx=10, pady=10)
 
 label = tk.Label(frame, text="Select an audio file:")
-label.pack(side=tk.LEFT)
+label.grid(row=0, column=0, padx=5, pady=5)
 
 entry_file = tk.Entry(frame, width=50)
-entry_file.pack(side=tk.LEFT)
+entry_file.grid(row=0, column=1, padx=5, pady=5)
 
-browse_button = tk.Button(frame, text="Browse", command=browse_file)
-browse_button.pack(side=tk.LEFT)
+browse_btn = tk.Button(frame, text="Browse", command=browse_file)
+browse_btn.grid(row=0, column=2, padx=5, pady=5)
 
-create_button = tk.Button(root, text="Create Karaoke", command=run_karaoke)
-create_button.pack(pady=10)
+create_btn = tk.Button(frame, text="Create Karaoke", command=run_karaoke)
+create_btn.grid(row=1, column=0, columnspan=3, pady=10)
 
 # Run the application
 root.mainloop()
+

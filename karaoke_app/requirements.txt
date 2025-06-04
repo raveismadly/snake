@@ -1,5 +1,5 @@
 
-# Use specific versions that are known to work together
+# This project requires Python 3.9 or higher (recommended: Python 3.10)
 demucs==4.0.1
 pydub==0.25.1
 moviepy==1.0.3

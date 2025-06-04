@@ -8,6 +8,11 @@ import moviepy.editor as mp
 import demucs.separate
 import whisper
 
+# Check Python version
+if sys.version_info < (3, 9):
+    print("This script requires Python 3.9 or higher")
+    sys.exit(1)
+
 # Import os again to ensure it's available in all scopes
 import os as os_imported
 
